@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <TargetFramework>netstandard2.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\ImGui.NET\ImGui.NET.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="..\..\deps\cimgui\win-x64\cimgui.dll" CopyToOutputDirectory="PreserveNewest" />
+        <Content Include="..\..\deps\cimgui\osx-x64\cimgui.dylib" CopyToOutputDirectory="PreserveNewest" Link="lib%(Filename)%(Extension)" />
+        <Content Include="..\..\deps\cimgui\linux-x64\cimgui.so" CopyToOutputDirectory="PreserveNewest" Link="lib%(Filename)%(Extension)" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\MonoGame\MonoGame.Framework\MonoGame.Framework.WindowsDX.csproj" />
+    </ItemGroup>
+
+</Project>
